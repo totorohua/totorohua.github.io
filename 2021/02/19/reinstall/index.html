@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="blockchain, Alva的个人站">
+    <meta name="keywords" content="Reinstall, Alva的个人站">
     <meta name="description" content="首鼠两端，取死道也">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>blockchain | Alva的个人站</title>
+    <title>Reinstall | Alva的个人站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -326,12 +326,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">blockchain</h1>
+                    <h1 class="description center-align post-title">Reinstall</h1>
                 </div>
             </div>
         </div>
@@ -445,9 +445,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/skill/">
+                                <span class="chip bg-color">skill</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -459,7 +463,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-23
+                    2021-02-19
                 </div>
                 
 
@@ -483,7 +487,66 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="重装系统及软件安装"><a href="#重装系统及软件安装" class="headerlink" title="重装系统及软件安装"></a>重装系统及软件安装</h1><blockquote>
+<p>本文仅用于记录自己踩坑学习，无太大参考意义，如有错误，劳烦评论指出。</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> 最近给好几台老笔电焕发了新春（⊙﹏⊙‖ 还遇到Aspire 4560G这种十年前的CPU），手法越发熟练，想记录一下采踩坑过程。  </p>
+<p>其实对于电脑性能要求不高的上班族，把大学时期的老电脑升级一下，比重新买一个划算很多。 这里大约说一下老电脑的问题，无非是<strong>机械硬盘太慢，内存太小，或者网卡不行，以及电池老化等</strong>。</p>
+<hr>
+<h3 id="硬盘"><a href="#硬盘" class="headerlink" title="硬盘"></a>硬盘</h3><blockquote>
+<p>电脑硬盘 主要分为<strong>机械硬盘</strong>和<strong>固态硬盘</strong>两类。</p>
+</blockquote>
+<blockquote>
+<p>机械硬盘在盘面上写数据、磁盘转动，机械臂移动，是比较原始的数据读写方式，电磁存储。  </p>
+</blockquote>
+<blockquote>
+<p>固态硬盘用固态电子存储芯片阵列而制成的硬盘，由控制单元和存储单元组成，读写速度十几倍于机械。</p>
+</blockquote>
+<p>老电脑<strong>开机过程慢，开机后等待时间久</strong>，主要原因就是装备的是机械盘，而现在卖的电脑主打都是固态盘。固态几乎在所有方面都优于机械，<strong>耐用，性能高，稳定性好，发热小，噪音低等等</strong>，由于技术突破，现在固态的价格也从以前的几元一G，到现在不到一元一G，那我们还有什么理由不用它呢！</p>
+<p>由于篇幅问题，这里不详细说明接口等一些具体问题，以后有机会详细说。</p>
+<blockquote>
+<p>记住 <strong>M2 NVMe &gt; M2 &gt; SATA3 &gt; SATA2</strong></p>
+</blockquote>
+<p>在购买方面，由于每个人需求不同，没有一款产品能够满足所有人,见仁见智。</p>
+<p><strong>SATA+AHCI</strong> 老电脑SATA接口无脑选 <a target="_blank" rel="noopener" href="https://item.jd.com/6164595.html#none">英睿达MX500</a></p>
+<p><strong>M2</strong> 暂不推荐，太多了…</p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/19926569">固态硬盘购买推荐</a></p>
+<hr>
+<h3 id="内存条"><a href="#内存条" class="headerlink" title="内存条"></a>内存条</h3><p>内存条讲究的话，就得细细说道，这篇文章原理讲的很清楚。  </p>
+<p> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/63604430?from_voters_page=true">内存条怎么选？  –从入门到精通</a> </p>
+<p>但就我个人经历来看，并不需要过分挑肥拣瘦。</p>
+<blockquote>
+<p>接口：DDR3/ DDR4<br>容量：1GB/ 2GB/ 4GB /8GB /16GB，注意电脑允许最大内存容量<br>频率：和原来内存条频率一样即可<br>品牌：三星/ 海力士/ 镁光<br>4G *2 &gt; 8G *1</p>
+</blockquote>
+<p>按以上原则购买就行。</p>
+<hr>
+<h3 id="电脑拆装"><a href="#电脑拆装" class="headerlink" title="电脑拆装"></a>电脑拆装</h3><p>这个就更没啥好说的了，唯手熟尔。拆之前注意防静电就行，动手前迷信手摸地，拆的时候注意螺丝对应位置以及对待卡扣小心点，别大力出奇迹给整断了…可以提前在网上查查拆机教程，如华硕A555L拆机。(没错，学会百度很重要)</p>
+<hr>
+<h2 id="重装系统"><a href="#重装系统" class="headerlink" title="重装系统"></a>重装系统</h2><p>现在主流都用Windows10系统，这里推荐看这个B站UP主的保姆级教学视频</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1DJ411D79y">超详细WIN10系统安装教程</a></p>
+<hr>
+<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><h3 id="激活软件"><a href="#激活软件" class="headerlink" title="激活软件"></a>激活软件</h3><p>作为一枚贫穷大学生，我承认用不起正版系统，也买不起激活码，老老实实用破解吧。  </p>
+<p>推荐使用 <strong>AAct Portable</strong> ，AAct 是一款由俄国高手 Ratiborus 制作的用于激活 Windows 和 Office VL 版本的 KMS 程序，该程序不需要任何版本的 .NET Framework 支持，可激活 Windows Vista、Windows 7、Windows 8/8.1、Windows 10、Server 2008/2008 R2、2012/2012 R2、Office 2010/2013/2016 VL 版本。<br><img src="./reinstall/AAct.png" alt="AAct截图"></p>
+<blockquote>
+<p>一键激活，方便实用</p>
+</blockquote>
+<hr>
+<h3 id="Office办公软件"><a href="#Office办公软件" class="headerlink" title="Office办公软件"></a>Office办公软件</h3><p>作为一枚贫穷大学生，我也买不起正版office套餐，所以还是破解香啊。</p>
+<p>你可以去官网<a target="_blank" rel="noopener" href="https://www.office.com/">office.com</a>下载套餐，不过效率不高。</p>
+<p>推荐使用 <strong>Office Tool Plus</strong> ，  Office Tool Plus 支持多个 Office 授权版本的部署，用户只需添加产品即可开始下载、安装。</p>
+<blockquote>
+<p>官网戳这里 <a target="_blank" rel="noopener" href="https://otp.landian.vip/zh-cn/">Office Tool Plus</a></p>
+</blockquote>
+<p>官网下载软件后解压出文件夹如下  </p>
+<p><img src="./reinstall/office.png" alt="avatar">  </p>
+<p>先选择 <strong>Runtime</strong> 这一项安装 <strong>windowsdesktop-runtime</strong><br>之后打开 <strong>Office Tool Plus.exe</strong> 就可以部署office软件，部署过程见<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36761831/article/details/108653950">教程</a></p>
+<blockquote>
+<p>注意：<strong>Office Tool Plus</strong> 的激活功能不尽人意，可以结合 <strong>AAct Portable</strong> 的office激活功能使用。</p>
+</blockquote>
+<hr>
+<p>未完待续… </p>
+<p>以后想起来啥再加在后面</p>
+
                 
             </div>
             <hr/>
@@ -509,7 +572,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xuyanghua.xyz/2021/01/23/blockchain/">http://xuyanghua.xyz/2021/01/23/blockchain/</a>
+                    <a href="http://xuyanghua.xyz/2021/02/19/reinstall/">http://xuyanghua.xyz/2021/02/19/reinstall/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,7 +609,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/skill/">
+                                    <span class="chip bg-color">skill</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -715,7 +782,7 @@
         repo: 'totorohua.github.io',
         owner: 'totorohua',
         admin: "totorohua",
-        id: '2021-01-23T15-49-36',
+        id: '2021-02-19T21-53-46',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1006,9 +1073,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/02/19/reinstall/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Reinstall">
+                        
+                        <span class="card-title">Reinstall</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Xu Yanghua
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/skill/">
+                        <span class="chip bg-color">skill</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/02/11/annual-summary/">
                     <div class="card-image">
@@ -1026,9 +1140,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1042,51 +1156,6 @@
                     
                     <a href="/tags/%E6%97%A0%E7%97%85%E5%91%BB%E5%90%9F/">
                         <span class="chip bg-color">无病呻吟</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/01/18/article-title/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="markdown初记">
-                        
-                        <span class="card-title">markdown初记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-18
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Xu Yanghua
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>
