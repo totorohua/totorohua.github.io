@@ -6,7 +6,7 @@
   <link href="http://xuyanghua.xyz/atom.xml" rel="self"/>
   
   <link href="http://xuyanghua.xyz/"/>
-  <updated>2021-04-01T05:05:51.749Z</updated>
+  <updated>2021-06-16T17:45:57.797Z</updated>
   <id>http://xuyanghua.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>USB2.0协议</title>
+    <link href="http://xuyanghua.xyz/2021/06/17/usb2-protocol/"/>
+    <id>http://xuyanghua.xyz/2021/06/17/usb2-protocol/</id>
+    <published>2021-06-16T16:00:00.000Z</published>
+    <updated>2021-06-16T17:45:57.797Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;USB协议&quot;&gt;&lt;a href=&quot;#USB协议&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="USB" scheme="http://xuyanghua.xyz/tags/USB/"/>
+    
+  </entry>
   
   <entry>
     <title>Reinstall</title>
@@ -36,30 +59,6 @@
     
     
     <category term="skill" scheme="http://xuyanghua.xyz/tags/skill/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>鼠年总结</title>
-    <link href="http://xuyanghua.xyz/2021/02/11/annual-summary/"/>
-    <id>http://xuyanghua.xyz/2021/02/11/annual-summary/</id>
-    <published>2021-02-11T01:58:38.000Z</published>
-    <updated>2021-03-21T06:49:20.656Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;鼠走牛来&quot;&gt;&lt;a href=&quot;#鼠走牛来&quot; class=&quot;headerlink&quot; title=&quot;鼠走牛来&quot;&gt;&lt;/a&gt;鼠走牛来&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;家&quot;&gt;&lt;a href=&quot;#家&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="无病呻吟" scheme="http://xuyanghua.xyz/tags/%E6%97%A0%E7%97%85%E5%91%BB%E5%90%9F/"/>
     
   </entry>
   
