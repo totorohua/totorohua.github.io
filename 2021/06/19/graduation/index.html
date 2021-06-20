@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="USB2.0协议, Alva的个人站">
+    <meta name="keywords" content="happy or bad end?, Alva的个人站">
     <meta name="description" content="首鼠两端，取死道也">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>USB2.0协议 | Alva的个人站</title>
+    <title>happy or bad end? | Alva的个人站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -326,12 +326,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">USB2.0协议</h1>
+                    <h1 class="description center-align post-title">happy or bad end?</h1>
                 </div>
             </div>
         </div>
@@ -447,8 +447,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/USB/">
-                                <span class="chip bg-color">USB</span>
+                            <a href="/tags/%E6%AF%95%E4%B8%9A/">
+                                <span class="chip bg-color">毕业</span>
                             </a>
                         
                     </div>
@@ -463,7 +463,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-17
+                    2021-06-19
                 </div>
                 
 
@@ -487,92 +487,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="USB协议"><a href="#USB协议" class="headerlink" title="USB协议"></a>USB协议</h1><blockquote>
-<p>本文仅用于记录自己踩坑学习，如有错误，劳烦评论指出。</p>
-</blockquote>
-<h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><blockquote>
-<p>帧：时间概念，在USB中，一帧就是1MS，它是一个独立的单元，包含了一系列总线动作，USB将1帧分为好几份，每一份是一个USB的传输动作。  </p>
-</blockquote>
-<ul>
-<li><p>USB设备有两种供电方式：</p>
-<ul>
-<li>自供电设备：设备可从外部电源获取工作电压</li>
-<li>总线供电设备：设备从 VBUS(5V)&nbsp;取电</li>
-</ul>
-</li>
-<li><p>编码方式：USB采用<strong>反向不归零（NRZI）</strong> 来传输数据，当传输线上的差分数据输入0时就取反，输入1时就保持原值。为了确保信号发送的准确性，当在USB总线上发送一个包时，传输设备就要进行位插入操作(即在数据流中每连续6个1后就插入一个0)，从而强迫NRZI码发生变化。</p>
-</li>
-</ul>
-<h3 id="构成"><a href="#构成" class="headerlink" title="构成"></a>构成</h3><ul>
-<li>USB数据是由二进制数字串构成的，首先数字串构成域（有七种），域再构成包，包再构成事务（IN、OUT、SETUP），事务最后构成传输（中断传输、并行传输、批量传输和控制传输）。</li>
-</ul>
-<h4 id="域"><a href="#域" class="headerlink" title="域"></a>域</h4><blockquote>
-<p>域：是USB数据最小的单位,有7种域。  </p>
-</blockquote>
-<ol>
-<li>同步域（SYNC），八位（hs包为32bit），值固定为0000 0001，用于本地时钟与输入同步</li>
-<li>标识域（PID），由四位标识符+四位标识符反码构成，表明包的类型和格式，USB的标识码有16种。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>令牌包:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x01：输出(OUT)启动一个方向为主机到设备的传输，并包含了设备地址和标号。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x09：输入(IN)&nbsp;启动一个方向为设备到主机的传输，并包含了设备地址和标号。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x05：帧起始(SOF)表示一个帧的开始，并且包含了相应的帧号。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x0d：设置(SETUP)启动一个控制传输，用于主机对设备的初始化。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>数据包：</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x03：偶数据包(DATA0)。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x0b：奇数据包(DATA1)。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>握手包:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x02：确认接收到无误的数据包(ACK)。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x0a：无效，接收(发送)端正在忙而无法接收(发送)信息。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x0e：错误，端点被禁止或不支持控制管道请求。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>特殊包：</strong> 0x0C前导，用于启动下行端口的低速设备的数据传输。</li>
-<li>地址域（ADDR）：七位地址，代表了设备在主机上的地址，地址000 0000被命名为零地址，是任何一个设备第一次连接到主机时，在被主机配置、枚举前的默认地址，一个USB主机只能接127个设备。</li>
-<li>端点域（ENDP），四位，一个USB设备有的端点数量最大为16个。</li>
-<li>帧号域（FRAM），11位，每一个帧都有一个特定的帧号，帧号域最大容量0x800，对于同步传输有重要意义（同步传输为四种传输类型之一）。</li>
-<li>数据域（DATA）：长度为0~1023字节，在不同的传输类型中，数据域的长度各不相同，但必须为整数个字节的长度</li>
-<li>校验域（CRC）：对令牌包和数据包中非PID域进行校验的一种方法，注意CRC码的除法是模2运算。</li>
-</ol>
-<h4 id="包"><a href="#包" class="headerlink" title="包"></a>包</h4><blockquote>
-<p>包：由域构成的包有四种类型，分别是令牌包、数据包、握手包和特殊包</p>
-</blockquote>
-<ol>
-<li>令牌包：可分为输入包、输出包、设置包和帧起始包（注意这里的输入包是用于设置输入命令的，输出包是用来设置输出命令的，而不是放据数的）<br>输入包、输出包和设置包的格式都是一样的：<br> <code>SYNC+PID+ADDR+ENDP+CRC5（五位的校验码）</code><br>帧起始包的格式：<br> <code>SYNC+PID+11位FRAM+CRC5（五位的校验码）</code></li>
-<li>数据包：分为DATA0包和DATA1包，当USB发送数据的时候，当一次发送的数据长度大于相应端点的容量时，就需要把数据包分为好几个包，分批发送，DATA0包和DATA1包交替发送，即如果第一个数据包是&nbsp;DATA0，那第二个数据包就是DATA1。但也有例外情况，在同步传输中，所有的数据包都是为DATA0，格式如下：<br> <code>SYNC+PID+0~1023字节+CRC16</code></li>
-<li>握手包：握手包包括&nbsp;<code>ACK、NAK、STALL、NYET</code>&nbsp;四种，其中&nbsp;ACK&nbsp;表示肯定的应答，成功的数据传输。NAK&nbsp;表示否定的应答，失败的数据传输，要求重新传输。STALL表示功能错误或端点被设置了STALL属性。NYET表示尚未准备好，要求等待。结构最为简单的包，格式如下：<code>SYNC+PID</code></li>
-</ol>
-<h4 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h4><blockquote>
-<p>事务：有IN、OUT和SETUP三大事务，每一种事务都由令牌包、数据包、握手包三个阶段构成</p>
-</blockquote>
-<h5 id="事务阶段"><a href="#事务阶段" class="headerlink" title="事务阶段"></a>事务阶段</h5><ul>
-<li>事务的三个阶段如下：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1、令牌包阶段：启动一个输入、输出或设置的事务。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2、数据包阶段：按输入、输出发送相应的数据。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3、握手包阶段：返回数据接收情况，在同步传输的IN和OUT事务中没有这个阶段。  </li>
-</ul>
-<h5 id="事务类型"><a href="#事务类型" class="headerlink" title="事务类型"></a>事务类型</h5><ul>
-<li>事务的三种类型如下(以下按三个阶段来说明一个事务)：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 1. IN事务：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;令牌包阶段——主机发送一个PID为IN的输入包给设备，通知设备要往主机发送数据；<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据包阶段——设备根据情况会作出三种反应(要注意：数据包阶段也不总是传送数据的，根据传输情况还会提前进入握手包阶段)。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 1)&nbsp;设备端点正常：设备往主机里面发出数据包(DATA0与DATA1交替)；<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 2)&nbsp;设备正在忙：无法往主机发出数据包就发送NAK无效包，IN事务提前结束，到了下一个IN事务才继续；<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 3)&nbsp;相应设备端点被禁止：发送错误包STALL包，事务也就提前结束了，总线进入空闲状态。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;握手包阶段——主机正确接收到数据之后就会向设备发送ACK包。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 2. OUT事务：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;令牌包阶段——主机发送一个PID为OUT的输出包给设备，通知设备要接收数据；<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据包阶段——比较简单，就是主机会往设备送数据，DATA0与DATA1交替<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;握手包阶段——设备根据情况会作出三种反应<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 1)&nbsp;设备端点接收正确，设备给主机返回ACK，通知主机可以发送新的数据，如果数据包发生了CRC校验错误，将不返回任何握手信息；<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 2)&nbsp;设备正在忙，无法给主机返回ACK，就发送NAK无效包，通知主机再次发送数据；<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 3)&nbsp;相应设备端点被禁止，发送错误包STALL包，事务提前结束，总线直接进入空闲状态。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 3. SETUP事务：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;令牌包阶段——主机发送一个PID为SETUP的输出包给设备，通知设备要接收数据；<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据包阶段——比较简单，就是主机往设备送数据，注意，这里只有一个固定为8个字节的DATA0包，这8个字节的内容就是标准的USB设备请求命令。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;握手包阶段——设备接收到主机的命令信息后，返回ACK，此后总线进入空闲状态，并准备下一个传输(在SETUP事务后通常是一个IN或OUT事务构成的传输)。</li>
-</ul>
-<h4 id="传输"><a href="#传输" class="headerlink" title="传输"></a>传输</h4><ul>
-<li>四种传输类型：</li>
-</ul>
-<ol>
-<li>控制传输：<br>&nbsp;&nbsp;&nbsp;&nbsp;控制传输是一种可靠的双向传输，一次控制传输可分为三个阶段。第一阶段为从HOST到Device的SETUP事务传输，这个阶段指定了此次控制传输的请求类型；第二阶段为数据阶段，也有些请求没有数据阶段；第三阶段为状态阶段，通过一次IN/OUT&nbsp;传输表明请求是否成功完成。控制传输通过控制管道在应用软件和&nbsp;Device&nbsp;的控制端点之间进行，控制传输过程中传输的数据是有格式定义的，USB&nbsp;设备或主机可根据格式定义解析获得的数据含义。其他三种传输类型都没有格式定义。控制传输对于最大包长度有固定的要求。对于高速设备该值为&nbsp;64Byte；对于低速设备该值为&nbsp;8；全速设备可以是&nbsp;8或&nbsp;16或&nbsp;32或&nbsp;64。最大包长度 表征了一个端点单次接收/发送数据的能力，实际上反应的是该端点对应的Buffer的大小。Buffer&nbsp;越大，单次可接收/发送的数据包越大，反之亦反。当通过一个端点进行数据传输时，&nbsp;&nbsp;若数据的大小超过该端点的最大包长度时，需要将数据分成若干个数据包传输，并且要求除最后一个包外，所有的包长度均等于该最大包长度。这也就是说如果一个端点收到/发送了一个长度小于最大包长度的包，即意味着数据传输结束。控制传输在访问总线时也受到一些限制，如：<blockquote>
-<p>a. 高速端点的控制传输不能占用超过&nbsp;20%的微帧，全速和低速的则不能超过&nbsp;10%。<br>   b.&nbsp;在一帧内如果有多余的未用时间，并且没有同步和中断传输，可以用来进行控制传输。</p>
-</blockquote>
-</li>
-<li>中断传输：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中断传输是一种轮询的传输方式，是一种单向的传输，HOST通过固定的间隔对中断端点进行查询，若有数据传输或可以接收数据则返回数据或发送数据，否则返回NAK，表示尚未准备好。中断传输的延迟有保证，但并非实时传输，它是一种延迟有限的可靠传输，支持错误重传。对于高速/全速/低速端点，最大包长度分别可以达到1024/64/8 Bytes。高速中断传输不得占用超过&nbsp;80%的微帧时间，全速和低速不得超过&nbsp;90%。中断端点的轮询间隔由在端点描述符中定义，全速端点的轮询间隔可以是1<del>255mS，低速端点为10</del>255mS，高速端点为(2interval-1)*125uS，其中&nbsp;interval取&nbsp;1到&nbsp;16之间的值。除高速高带宽中断端点外，一个微帧内仅允许一次中断事务传输，高速高带宽端点最多可以在一个微帧内进行三次中断事务传输，传输高达&nbsp;3072&nbsp;字节的数据。所谓单向传输，并不是说该传输只支持一个方向的传输，而是指在某个端点上该传输仅支持一个方向，或输出，或输入。如果需要在两个方向上进行某种单向传输，需要占用两个端点，分别配置成不同的方向，可以拥有相同的端点编号。</li>
-<li>批量传输：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;批量传输是一种可靠的单向传输，但延迟没有保证，它尽量利用可以利用的带宽来完成传输，适合数据量比较大的传输。低速&nbsp;USB&nbsp;设备不支持批量传输，高速批量端点的最大包长度为&nbsp;512，全速批量端点的最大包长度可以为&nbsp;8、16、32、64。批量传输在访问&nbsp;USB&nbsp;总线时，相对其他传输类型具有最低的优先级，USB HOST&nbsp;总是优先安排其他类型的传输，当总线带宽有富余时才安排批量传输。高速的批量端点必须支持PING&nbsp;操作，向主机报告端点的状态，NYET&nbsp;表示否定应答，没有准备好接收下一个数据包，ACK&nbsp;表示肯定应答，已经准备好接收下一个数据包。</li>
-<li>同步传输：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同步传输是一种实时的、不可靠的传输，不支持错误重发机制。只有高速和全速端点支持同步传输，高速同步端点的最大包长度为&nbsp;1024，低速的为&nbsp;1023。除高速高带宽同步端点外，一个微帧内仅允许一次同步事务传输，高速高带宽端点最多可以在一个微帧内进行三次同步事务传输，传输高达&nbsp;3072&nbsp;字节的数据。全速同步传输不得占用超过&nbsp;80%的帧时间，高速同步传输不得占用超过&nbsp;90%的微帧时间。 同步端点的访问也和中断端点一样，有固定的时间间隔限制。</li>
-</ol>
-<h3 id="端点"><a href="#端点" class="headerlink" title="端点"></a>端点</h3><p> 端点(Endpoint)：位于USB设备或主机上的一个数据缓冲区，是USB设备中可以进行数据收发的最小单元，支持单向或者双向的数据传输，用来存放和发送USB的各种数据，每一个端点都有唯一的确定地址，有不同的传输特性(如输入端点、输出端点、配置端点、批量传输端点)。除默认端点外ls低速设备最多支持2组端点(2&nbsp;个输入，2&nbsp;个输出)，高速和全速设备最多支持15组端点。</p>
-<h3 id="描述符"><a href="#描述符" class="headerlink" title="描述符"></a>描述符</h3><ul>
-<li>描述符：用于描述一个USB设备的所有属性，USB主机是通过一系列命令来要求设备发送这些信息的。它的作用就是给主机传递信息，从而让主机知道设备具有什么功能、属于哪一类设备、要占用多少带宽、使用哪类传输方式及数据量的大小，只有主机确定了这些信息之后，设备才能真正开始工作，所以描述符也是十分重要的部分，标准的描述符有5种，USB为这些描述符定义了编号：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1——设备描述符<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2——配置描述符<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3——字符描述符<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4——接口描述符<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5——端点描述符<br>一个设备只有一个设备描述符，而一个设备描述符可以包含多个配置描述符，而一个配置描述符可以包含多个接口描述符，一个接口使用了几个端点，就有几个端点描述符。</li>
-</ul>
-<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><blockquote>
-<p>枚举：USB设备连接到HOST时，HOST必须通过默认的控制管道对其进行枚举，完成获得其设备描述、进行地址分配、获得其配置描述、进行配置等操作后方可正常使用。USB设备的即插即用特性即依赖于此。  </p>
-</blockquote>
-<ul>
-<li>枚举时USB的状态：当USB设备插上主机时，主机就通过一系列的动作来对设备进行枚举配置(配置是属于枚举的一个态，态表示暂时的状态)，这些状态如下：</li>
-</ul>
-<ol>
-<li>接入态(Attached)：设备接入主机后，主机通过检测信号线上的电平变化来发现设备的接入；</li>
-<li>供电态(Powered)：就是给设备供电，分为设备接入时的默认供电值，配置阶段后的供电值(按数据中要求的最大值，可通过编程设置)；</li>
-<li>缺省态(Default)：USB在被配置之前，通过缺省地址0与主机进行通信；</li>
-<li>地址态(Address)：经过了配置，USB设备被复位后，就可以按主机分配给它的唯一地址来与主机通信，这种状态就是地址态；</li>
-<li>配置态(Configured)：通过各种标准的USB请求命令来获取设备的各种信息，并对设备的某些信息进行改变或设置。</li>
-<li>挂起态(Suspended)：总线供电设备在3ms内没有总线操作，即USB总线处于空闲状态的话，该设备就要自动进入挂起状态，在进入挂起状态后，总的电流功耗不超过280uA。</li>
-</ol>
-<h3 id="阻抗匹配"><a href="#阻抗匹配" class="headerlink" title="阻抗匹配"></a>阻抗匹配</h3><ul>
-<li>阻抗匹配：严格来讲，当高速电路中，信号在传输介质上的传输时间大于信号上升沿或者下降沿的1/4时，该传输介质就需要阻抗匹配。一般当PCB走线的长度大于其传输信号的波长的1/10时，我们就需要考虑阻抗匹配。100MHz以上的高速数字电路就可以考虑阻抗匹配。一般是做匹配防止信号发射。33欧是个经验值而不是最佳值，具体串阻的选择应满足&nbsp;驱动器输出阻抗＋串阻＝传输阻抗。信号在传输的过程中，如果传输路径上的特性阻抗发生变化，信号就会在阻抗不连续的结点产生反射。影响特性阻抗的因素有：介电常数、介质厚度、线宽、铜箔厚度。USB全速模式下驱动器的输出阻抗和输入阻抗一般不为45ohm，信号会发生反射造成信号质量下降，需要对电路进行匹配来减小信号的反射；E330使用iMX258处理器，其全速Host的输出阻抗Rs厂家预计为10ohm，而USB线的差分特性阻抗为90ohm，所以要实现驱动器和USB线的阻抗匹配必须在USB D+和D-上串联电阻，串联电阻的要求为Rs+R串=USB线特性阻抗。</li>
-</ul>
-<hr>
-<h2 id="协议组成"><a href="#协议组成" class="headerlink" title="协议组成"></a>协议组成</h2><h3 id="总体框架"><a href="#总体框架" class="headerlink" title="总体框架"></a>总体框架</h3><p>待续~</p>
-<h3 id="Common"><a href="#Common" class="headerlink" title="Common"></a>Common</h3><p>待续~</p>
-<h3 id="Analog"><a href="#Analog" class="headerlink" title="Analog"></a>Analog</h3><p>待续~</p>
-<h3 id="Digital"><a href="#Digital" class="headerlink" title="Digital"></a>Digital</h3><p>待续~</p>
+                <p>2021年6月19日，领完双证，转走组织关系，大学毕业了。</p>
+<p>今天走了很多地方，见了许多人，想见的或是不想见的，终有一别。<br>人之相与，俯仰一世，四年如梦，希望少年不老，伙伴率真。</p>
+<p>四年湖工，回首怅然。从中区123到北区430再到东区338，可以看到湖工发展的越来越好。当年高考没考好，来到了湖工，一心想好好学习，努力追上昔日的同学。没曾想到，电信自动化万金油真香啊，什么都能沾点边。靠运气和老师帮忙，毕业算是进入了芯片行业，恰逢疫情与贸易战，国家大力扶持芯片相关产业，也是一个机遇，希望自己能够不忘初心，努力拼搏，闯出一点成绩。还是很庆幸当年误打误撞来这里的，也许高考考好一点，就不一定会有今天的我了。</p>
+<p>大学除了学习之外，其他时间基本在部门和社团度过，单调的不能再单调，上课、比赛、部门活动，再无其它。大二之后主要精力转移到实验室，大多数时间奉献给A6-4的日日夜夜，看起来充实忙碌，却也多了很多遗憾。在日日夜夜的努力中，尽量做到脚踏实地，努力尽今夕, 而款款独行。</p>
+<p>最遗憾的就是大学四年没有谈一次恋爱，和喜欢的人在一起转转武汉。说起来也挺巧的，今天回去转组织关系的时候遇到了她，约着一起坐坐走走，想想以前，看看学校，谈谈以后。说了很多，谈到情感时，我表示以前挺有好感的，不过都过去了。她也一样，一起加油搞事业，有机会武汉约饭。挺好的结局，意料之内，情理之中。</p>
+<p>我就是这样的人呀，怀着一丝天真，走出校园，奔入人海。</p>
+<p>人越来越懒，话越来越少，睡得越来越晚，头发越来越稀，心事越来越密。谈到未来，我想最重要的还是工作，先提升自己，努力做到出色。生活中注意交流，学会高效的沟通，少自闭，多笑笑，合理安排时间，课余多充电，有机会多出去转转，世界很大，也想到处看看。其他的随缘，爸妈催，亲戚介绍，以后过年少不了的话题，不管就好，随缘吧。</p>
+<p>感谢同学，最好的年纪遇见最好的你们：<br>cx, ltx, zzx, gq, wzx, yqp, xlx, ph, wyl, zc, cyz, fwl, gsl, xdw, wwl, etc.<br>还有许多，不一一列举了，希望能够经常联系啊。</p>
+<p>感谢贺院长，让我能有机会站在更高的平台，看更远的未来。<br>感谢周哥和詹老板，感谢智能车比赛的所有队员们，早上五点的灯火通明的实验室见证我们的青春。<br>感谢父母，感谢父母给了我生命，感谢父母育我成长，感谢父母把我送入学堂，让我学会做人、做事。未来当披荆棘，斩风浪，以慰父母心。</p>
+<p>回顾四年的湖工生活，简单而充实，虽有遗憾，但事事岂能尽如人意，只求无愧于心。</p>
+<p>各位，江湖见 <span class="github-emoji"><span>🏃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 
                 
             </div>
@@ -599,7 +524,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xuyanghua.xyz/2021/06/17/usb2-protocol/">http://xuyanghua.xyz/2021/06/17/usb2-protocol/</a>
+                    <a href="http://xuyanghua.xyz/2021/06/19/graduation/">http://xuyanghua.xyz/2021/06/19/graduation/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -637,8 +562,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/USB/">
-                                    <span class="chip bg-color">USB</span>
+                                <a href="/tags/%E6%AF%95%E4%B8%9A/">
+                                    <span class="chip bg-color">毕业</span>
                                 </a>
                             
                         </div>
@@ -809,7 +734,7 @@
         repo: 'totorohua.github.io',
         owner: 'totorohua',
         admin: "totorohua",
-        id: '2021-06-17T00-00-00',
+        id: '2021-06-19T00-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1100,9 +1025,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/06/19/graduation/">
                     <div class="card-image">
@@ -1120,9 +1046,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1131,6 +1057,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1149,13 +1076,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/19/reinstall/">
+                <a href="/2021/06/17/usb2-protocol/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Reinstall">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="USB2.0协议">
                         
-                        <span class="card-title">Reinstall</span>
+                        <span class="card-title">USB2.0协议</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1166,7 +1093,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-17
                             </span>
                         <span class="publish-author">
                             
@@ -1179,8 +1106,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/skill/">
-                        <span class="chip bg-color">skill</span>
+                    <a href="/tags/USB/">
+                        <span class="chip bg-color">USB</span>
                     </a>
                     
                 </div>
